@@ -18,5 +18,6 @@ blocks:
         - name: Test Suite
           commands:
             # Uses the redefined SEMAPHORE_GIT_DIR to clone code into the correct directory
-            - go build github.com/effortlessdb/main/main.go
+            - go version
+            - go build github.com/effortlessdb/main/main
             # Further setup from this point on
