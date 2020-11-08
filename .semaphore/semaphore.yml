@@ -1,29 +1,25 @@
-# .semaphore/semaphore.yml
 version: v1.0
 name: Go Example
 agent:
   machine:
     type: e1-standard-2
     os_image: ubuntu1804
-
 blocks:
   - name: Test
     task:
       prologue:
         commands:
-          - export "SEMAPHORE_GIT_DIR=$(go env GOPATH)/src/github.com/${SEMAPHORE_PROJECT_NAME}"
-          - export "PATH=$(go env GOPATH)/bin:${PATH}"
-          - mkdir -vp "${SEMAPHORE_GIT_DIR}" "$(go env GOPATH)/bin"
-          - git clone https://github.com/udhos/update-golang
-          -  cd update-golang
-          -  sudo ./update-golang.sh
+          - 'export "SEMAPHORE_GIT_DIR=$(go env GOPATH)/src/github.com/${SEMAPHORE_PROJECT_NAME}"'
+          - 'export "PATH=$(go env GOPATH)/bin:${PATH}"'
+          - 'mkdir -vp "${SEMAPHORE_GIT_DIR}" "$(go env GOPATH)/bin"'
+          - 'git clone https://github.com/udhos/update-golang'
+          - cd update-golang
+          - sudo ./update-golang.sh
       jobs:
         - name: Test Suite
           commands:
-            # Uses the redefined SEMAPHORE_GIT_DIR to clone code into the correct directory
             - sudo ls -l
             - sudo pwd
-            - sudo ls /home/semaphore/go/src
+            - sudo ls /home/semaphore/go/src/github.com
             - sudo go version
             - sudo go build /home/semaphore/go/src/github.com/effortlessdb/main/main.go
-            # Further setup from this point on
