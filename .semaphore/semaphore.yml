@@ -11,6 +11,9 @@ blocks:
     task:
       prologue:
         commands:
+          - export "SEMAPHORE_GIT_DIR=$(go env GOPATH)/src/github.com/${SEMAPHORE_PROJECT_NAME}"
+          - export "PATH=$(go env GOPATH)/bin:${PATH}"
+          - mkdir -vp "${SEMAPHORE_GIT_DIR}" "$(go env GOPATH)/bin"
           - git clone https://github.com/udhos/update-golang
           -  cd update-golang
           -  sudo ./update-golang.sh
@@ -18,6 +21,8 @@ blocks:
         - name: Test Suite
           commands:
             # Uses the redefined SEMAPHORE_GIT_DIR to clone code into the correct directory
+            - sudo ls -l
+            - sudo pwd
             - go version
             - go build github.com/effortlessdb/main/main.go
             # Further setup from this point on
