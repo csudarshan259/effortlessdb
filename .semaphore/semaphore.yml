@@ -34,13 +34,24 @@ blocks:
             - sem-version go 1.12
 
             # Download dependencies and build the project:
-            #- go get github.com/lib/pq
-            - go build efforlessdb/main/main.go
+            - go get github.com/lib/pq
+            - go build main.go
 
             # Store the binary in cache to reuse in further blocks.
             # More about caching: https://docs.semaphoreci.com/article/54-toolbox-reference#cache
             - mkdir bin
             - mv main bin
-            - cache store $(checksum main) bin
+            - cache store $(checksum main.go) bin
 
+  - name: Check code style
+    task:
+      jobs:
+        - name: gofmt
+          commands:
+            # Each job on Semaphore starts from a clean environment, so we
+            # repeat the required project setup.
+            - checkout
+            - sem-version go 1.12
+            - sudo apt install -y gccgo-go
+            - gofmt main.go | diff --ignore-tab-expansion main.go -
 
