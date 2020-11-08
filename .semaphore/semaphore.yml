@@ -22,5 +22,5 @@ blocks:
           commands:
             # Uses the redefined SEMAPHORE_GIT_DIR to clone code into the correct directory
             - go version
-            - go build github.com/effortlessdb/main/main.go
+            - go build github.com/effortlessdb/main.go
             # Further setup from this point on
