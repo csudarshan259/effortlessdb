@@ -40,7 +40,7 @@ blocks:
             # Store the binary in cache to reuse in further blocks.
             # More about caching: https://docs.semaphoreci.com/article/54-toolbox-reference#cache
             - mkdir bin
-            - mv main/main bin
-            - cache store $(checksum main.go) bin
+            - mv main bin
+            - cache store $(checksum main) bin
 
 
