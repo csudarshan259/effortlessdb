@@ -10,7 +10,7 @@ func CreateFile(collectionName string) bool {
 
 	file, err := os.Create(collectionName + Others.EfdExt)
 	if err != nil {
-		fmt.Println("Unable to create collection", collectionName)
+		fmt.Println("Unable to Create collection", collectionName)
 		return false
 	}
 

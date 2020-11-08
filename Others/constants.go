@@ -6,7 +6,7 @@ const (
 	Success               = "SUCCESS"
 	InvalidCollectionName = "ICN"
 	FileDoesNotExist      = "FNE"
-	Create                = "create"
+	Create                = "Create"
 	Read                  = "read"
 	Update                = "update"
 	Delete                = "delete"

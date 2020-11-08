@@ -1,4 +1,4 @@
-package create
+package Create
 
 import (
 	"effortlessdb/Others"

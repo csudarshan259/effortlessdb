@@ -2,7 +2,7 @@ package main
 
 import (
 	"effortlessdb/Others"
-	"effortlessdb/Others/create"
+	"effortlessdb/Others/Create"
 	"fmt"
 	"os"
 	"strings"
@@ -19,7 +19,7 @@ func main() {
 	//fmt.Println(identifier)
 	if identifier == Others.Create {
 
-		isSuccess, result := create.AddKeyValueDoc(arguments[2], arguments[3], arguments[4])
+		isSuccess, result := Create.AddKeyValueDoc(arguments[2], arguments[3], arguments[4])
 		fmt.Println(result, isSuccess)
 
 	} else if identifier == Others.Read {

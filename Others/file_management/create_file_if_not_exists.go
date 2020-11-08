@@ -18,7 +18,7 @@ func CreateFileIFNotExists(collectionName string, _character string) (bool, stri
 
 	file, err := os.Create(fileName)
 	if err != nil {
-		//		fmt.Println("Unable to create collection", collectionName)
+		//		fmt.Println("Unable to Create collection", collectionName)
 		return false, fileName
 	}
 	defer file.Close()
