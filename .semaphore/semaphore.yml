@@ -34,13 +34,13 @@ blocks:
             - sem-version go 1.12
 
             # Download dependencies and build the project:
-            - go build main.go
+            - go build Main.go
 
             # Store the binary in cache to reuse in further blocks.
             # More about caching: https://docs.semaphoreci.com/article/54-toolbox-reference#cache
             - mkdir bin
             - mv output bin
-            - cache store $(checksum main.go) bin
+            - cache store $(checksum Main.go) bin
 
   - name: Check code style
     task:
@@ -52,6 +52,6 @@ blocks:
             - checkout
             - sem-version go 1.12
             - sudo apt install -y gccgo-go
-            - gofmt main.go | diff --ignore-tab-expansion main.go -
+            - gofmt Main.go | diff --ignore-tab-expansion Main.go -
 
 
