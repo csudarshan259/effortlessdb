@@ -1,29 +1,56 @@
-# .semaphore/semaphore.yml
+# Use the latest stable version of Semaphore 2.0 YML syntax:
 version: v1.0
-name: Go Example
+
+# Name your pipeline. In case you connect multiple pipelines with promotions,
+# the name will help you differentiate between, for example, a CI build phase
+# and delivery phases.
+name: Semaphore Go CI example
+
+# An agent defines the environment in which your code runs.
+# It is a combination of one of available machine types and operating
+# system images.
+# See https://docs.semaphoreci.com/article/20-machine-types
+# and https://docs.semaphoreci.com/article/32-ubuntu-1804-image
 agent:
   machine:
     type: e1-standard-2
     os_image: ubuntu1804
 
+# Blocks are the heart of a pipeline and are executed sequentially.
+# Each block has a task that defines one or more jobs. Jobs define the
+# commands to execute.
+# See https://docs.semaphoreci.com/article/62-concepts
 blocks:
-  - name: Test
+  - name: Build project
     task:
-      prologue:
-        commands:
-          - export "SEMAPHORE_GIT_DIR=$(go env GOPATH)/src/github.com/${SEMAPHORE_PROJECT_NAME}"
-          - export "PATH=$(go env GOPATH)/bin:${PATH}"
-          - mkdir -vp "${SEMAPHORE_GIT_DIR}" "$(go env GOPATH)/bin"
-          - git clone https://github.com/udhos/update-golang
-          -  cd update-golang
-          -  sudo ./update-golang.sh
       jobs:
-        - name: Test Suite
+        - name: go get & build
           commands:
-            # Uses the redefined SEMAPHORE_GIT_DIR to clone code into the correct directory
-            - sudo ls -l
-            - sudo pwd
-            - sudo ls /home/semaphore/go/src/github.com
-            - sudo go version
-            - sudo go build /home/semaphore/go/src/github.com/effortlessdb
-            # Further setup from this point on
+            # Download code from Git repository. This step is mandatory if the
+            # job is to work with your code.
+            - checkout
+
+            # Set version of Go:
+            - sem-version go 1.12
+
+              # Download dependencies and build the project:
+             - go build main.go
+
+            # Store the binary in cache to reuse in further blocks.
+            # More about caching: https://docs.semaphoreci.com/article/54-toolbox-reference#cache
+            - mkdir bin
+            - mv webServer bin
+            - cache store $(checksum main.go) bin
+
+  - name: Check code style
+    task:
+      jobs:
+        - name: gofmt
+          commands:
+            # Each job on Semaphore starts from a clean environment, so we
+            # repeat the required project setup.
+            - checkout
+            - sem-version go 1.12
+            - sudo apt install -y gccgo-go
+            - gofmt webServer.go | diff --ignore-tab-expansion main.go -
+

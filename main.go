@@ -1,8 +1,8 @@
 package main
 
 import (
-	"effortlessdb/main/others"
-	"effortlessdb/main/others/create"
+	"effortlessdb/others"
+	"effortlessdb/others/create"
 	"fmt"
 	"os"
 	"strings"

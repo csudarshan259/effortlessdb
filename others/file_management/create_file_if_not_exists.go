@@ -1,7 +1,7 @@
 package file_management
 
 import (
-	"effortlessdb/main/others"
+	"effortlessdb/others"
 	"os"
 )
 
