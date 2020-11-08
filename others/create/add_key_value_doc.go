@@ -1,8 +1,8 @@
 package create
 
 import (
-	"effortlessdb/others"
-	"effortlessdb/others/file_management"
+	"../../others"
+	"../../others/file_management"
 )
 
 func AddKeyValueDoc(collectionName string, key string, value string) (bool, string) {
