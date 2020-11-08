@@ -35,12 +35,12 @@ blocks:
 
             # Download dependencies and build the project:
             #- go get github.com/lib/pq
-            - go build main/main.go
+            - go build effortlessdb/main/main.go
 
             # Store the binary in cache to reuse in further blocks.
             # More about caching: https://docs.semaphoreci.com/article/54-toolbox-reference#cache
             - mkdir bin
             - mv main/main bin
-            - cache store $(checksum main/main.go) bin
+            - cache store $(checksum effortlessdb/main/main.go) bin
 
 
