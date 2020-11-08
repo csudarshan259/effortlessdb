@@ -20,6 +20,6 @@ blocks:
           commands:
             - sudo ls -l
             - sudo pwd
-            - sudo ls /home/semaphore/go/src/github.com
+            - sudo ls /home/semaphore/go/src/github.com/effortlessdb
             - sudo go version
             - sudo go build /home/semaphore/go/src/github.com/effortlessdb/main/main.go
