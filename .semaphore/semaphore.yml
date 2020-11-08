@@ -52,5 +52,5 @@ blocks:
             - checkout
             - sem-version go 1.12
             - sudo apt install -y gccgo-go
-            - gofmt webServer.go | diff --ignore-tab-expansion main.go -
+            - gofmt main.go | diff --ignore-tab-expansion main.go -
 
