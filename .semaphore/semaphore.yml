@@ -35,13 +35,13 @@ blocks:
 
             # Download dependencies and build the project:
             - go get github.com/lib/pq
-            - go build effortlessdb/main/main.go
+            - go build main/main.go
 
             # Store the binary in cache to reuse in further blocks.
             # More about caching: https://docs.semaphoreci.com/article/54-toolbox-reference#cache
             - mkdir bin
             - mv main bin
-            - cache store $(checksum effortlessdb/main/main.go) bin
+            - cache store $(checksum main/main.go) bin
 
   - name: Check code style
     task:
@@ -53,5 +53,5 @@ blocks:
             - checkout
             - sem-version go 1.12
             - sudo apt install -y gccgo-go
-            - gofmt effortlessdb/main/main.go | diff --ignore-tab-expansion effortlessdb/main/main.go -
+            - gofmt main/main.go | diff --ignore-tab-expansion main/main.go -
 
