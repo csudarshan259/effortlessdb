@@ -1,4 +1,4 @@
-package effortlessdb
+package others
 
 const (
 	EfdExt                = ".efd"
