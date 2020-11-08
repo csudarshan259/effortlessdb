@@ -1,14 +1,14 @@
-package Create
+package create
 
 import (
-	"effortlessdb/Others"
-	"effortlessdb/Others/file_management"
+	"effortlessdb/others"
+	"effortlessdb/others/file_management"
 )
 
 func AddKeyValueDoc(collectionName string, key string, value string) (bool, string) {
 	if len(collectionName) > 24 {
 		//fmt.Println(collectionName)
-		return false, Others.InvalidCollectionName
+		return false, others.InvalidCollectionName
 	}
 	isSuccess, result := file_management.AddToFile(collectionName, key, value)
 	//fmt.Println(result)

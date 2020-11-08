@@ -1,4 +1,4 @@
-package Others
+package others
 
 const (
 	EfdExt                = ".efd"
@@ -6,7 +6,7 @@ const (
 	Success               = "SUCCESS"
 	InvalidCollectionName = "ICN"
 	FileDoesNotExist      = "FNE"
-	Create                = "Create"
+	Create                = "create"
 	Read                  = "read"
 	Update                = "update"
 	Delete                = "delete"
