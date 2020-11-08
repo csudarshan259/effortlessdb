@@ -1,4 +1,4 @@
-package others
+package db_op
 
 const (
 	EfdExt                = ".efd"
@@ -10,5 +10,5 @@ const (
 	Read                  = "read"
 	Update                = "update"
 	Delete                = "delete"
-	AbsolutePath          = "C:\\Users\\Sudarshan\\go\\src\\effortlessdb"
+	AbsolutePath          = "C:\\Users\\Sudarshan\\go\\src\\db_op"
 )
