@@ -11,9 +11,6 @@ blocks:
     task:
       prologue:
         commands:
-          - export "SEMAPHORE_GIT_DIR=$(go env GOPATH)/src/github.com/${SEMAPHORE_PROJECT_NAME}"
-          - export "PATH=$(go env GOPATH)/bin:${PATH}"
-          - mkdir -vp "${SEMAPHORE_GIT_DIR}" "$(go env GOPATH)/bin"
           - git clone https://github.com/udhos/update-golang
           -  cd update-golang
           -  sudo ./update-golang.sh
