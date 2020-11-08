@@ -1,8 +1,8 @@
 package create
 
 import (
-	"effortlessdb/others"
-	"effortlessdb/others/file_management"
+	"effortlessdb/Others"
+	"effortlessdb/Others/file_management"
 )
 
 func createCollection(collectionName string) (bool, string) {
@@ -12,7 +12,7 @@ func createCollection(collectionName string) (bool, string) {
 	}
 	isCollectionCreated := file_management.CreateFile(collectionName)
 	if isCollectionCreated {
-		return true, others.Success
+		return true, Others.Success
 	}
-	return false, others.UnrecognisedError
+	return false, Others.UnrecognisedError
 }

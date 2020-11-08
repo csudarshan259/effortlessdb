@@ -1,7 +1,7 @@
 package file_management
 
 import (
-	"effortlessdb/others"
+	"effortlessdb/Others"
 	"encoding/json"
 	"log"
 	"os"
@@ -40,5 +40,5 @@ func AddToFile(collectionName string, key string, value string) (bool, string) {
 		return false, "Unable to write to file"
 	}
 
-	return true, others.Success
+	return true, Others.Success
 }

@@ -1,4 +1,4 @@
-package others
+package Others
 
 const (
 	EfdExt                = ".efd"
