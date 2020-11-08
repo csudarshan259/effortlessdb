@@ -18,5 +18,5 @@ blocks:
         - name: Test Suite
           commands:
             # Uses the redefined SEMAPHORE_GIT_DIR to clone code into the correct directory
-            - go build "$(go env GOPATH)/src/github.com/${SEMAPHORE_PROJECT_NAME}/main"
+            - go build main
             # Further setup from this point on
