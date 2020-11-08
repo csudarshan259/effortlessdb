@@ -1,12 +1,12 @@
-package file_management
+package fileManagement
 
 import (
-	"../../others"
+	others2 "effortlessdb/effortlessdb/others"
 	"os"
 )
 
 func CreateFileIFNotExists(collectionName string, _character string) (bool, string) {
-	fileName := collectionName + _character + others.EfdExt
+	fileName := collectionName + _character + others2.EfdExt
 	//	fmt.Println("filename",fileName)
 	_, err := os.Stat(fileName)
 	isFileExist := !os.IsNotExist(err)
