@@ -1,7 +1,7 @@
 package file_management
 
 import (
-	"effortlessdb/others"
+	"../../others"
 	"encoding/json"
 	"log"
 	"os"
