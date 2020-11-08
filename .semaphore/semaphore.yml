@@ -23,6 +23,7 @@ blocks:
             # Uses the redefined SEMAPHORE_GIT_DIR to clone code into the correct directory
             - sudo ls -l
             - sudo pwd
+            - ls home/semaphore/go/src/github.com
             - go version
-            - go build $(go env GOPATH)/src/github.com/effortlessdb/main/main.go
+            - go build /home/semaphore/go/src/github.com/effortlessdb/main/main.go
             # Further setup from this point on
