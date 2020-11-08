@@ -24,5 +24,5 @@ blocks:
             - sudo ls -l
             - sudo pwd
             - go version
-            - go build github.com/effortlessdb/main/main.go
+            - go build $(go env GOPATH)/src/github.com/effortlessdb/main/main.go
             # Further setup from this point on
