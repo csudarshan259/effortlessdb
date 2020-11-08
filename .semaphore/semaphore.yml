@@ -35,7 +35,7 @@ blocks:
 
             # Download dependencies and build the project:
             #- go get github.com/lib/pq
-            - go build main.go
+            - go build efforlessdb/main/main.go
 
             # Store the binary in cache to reuse in further blocks.
             # More about caching: https://docs.semaphoreci.com/article/54-toolbox-reference#cache
