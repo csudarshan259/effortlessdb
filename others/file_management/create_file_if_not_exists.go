@@ -16,7 +16,7 @@ func CreateFileIFNotExists(collectionName string, _character string) (bool, stri
 		return true, fileName
 	}
 
-	file, err := os.Create(fileName + others.EfdExt)
+	file, err := os.Create(fileName)
 	if err != nil {
 		//		fmt.Println("Unable to create collection", collectionName)
 		return false, fileName
