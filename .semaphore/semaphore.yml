@@ -35,7 +35,7 @@ blocks:
             - export GOROOT=/usr/local/go
             - export GOPATH=$HOME/go
             - export PATH=$PATH:$GOROOT/bin
-            - go get ./...
+
             # Download dependencies and build the project:
             - go build
 
