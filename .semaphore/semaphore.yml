@@ -13,7 +13,8 @@ blocks:
             - checkout
             - sem-version go 1.15.3
             - go version
-            - go build
+            - go get
+            #- go build
             - mkdir bin
             - mv main bin
   - name: Check code style
