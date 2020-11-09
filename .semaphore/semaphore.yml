@@ -40,7 +40,7 @@ blocks:
             # More about caching: https://docs.semaphoreci.com/article/54-toolbox-reference#cache
             - mkdir bin
             - mv main bin
-            - cache store $(checksum main.go) bin
+            - cache store $(checksum main) bin
 
   - name: Check code style
     task:
