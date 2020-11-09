@@ -16,7 +16,7 @@ blocks:
            # - export GOROOT=/usr/local/go
             - export GOPATH=$HOME/go
             - export PATH=$PATH:$GOROOT/bin
-
+            - unset GOROOT
             - go get ./...
             - go build
             - mkdir bin
