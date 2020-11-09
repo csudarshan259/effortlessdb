@@ -1,8 +1,8 @@
 package object_id_generation
 
 import (
+	"crypto/rand"
 	"encoding/hex"
-	"math/rand"
 )
 
 func GenerateObjectId() string {
