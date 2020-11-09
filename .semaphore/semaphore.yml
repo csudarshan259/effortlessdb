@@ -1,5 +1,5 @@
 version: v1.0
-name: Semaphore Go CI example
+name: Semaphore Go CI
 agent:
   machine:
     type: e1-standard-2
@@ -11,8 +11,8 @@ blocks:
         - name: go get & build
           commands:
             - checkout
-            #- sem-version go 1.15.3
-            - export PATH=$PATH:$GOPATH/bin
+            - sem-version go 1.15.3
+            - go version
             - go build
             - mkdir bin
             - mv main bin
