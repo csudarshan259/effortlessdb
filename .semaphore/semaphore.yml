@@ -32,6 +32,7 @@ blocks:
 
             # Set version of Go:
             - sem-version go 1.15.3
+            - sudo apt-get install golang
             - export GOROOT=/usr/local/go
             - export GOPATH=$HOME/go
             - export PATH=$PATH:$GOROOT/bin
