@@ -11,13 +11,9 @@ blocks:
         - name: go get & build
           commands:
             - checkout $HOME/go/src/effortlessdb
-            - sem-version go 1.15.3
+            #- sem-version go 1.15.3
             - sudo apt-get install golang -y
-           # - export GOROOT=/usr/local/go
-           # - export GOPATH=$HOME/go
-            #- export PATH=$PATH:$GOROOT/bin
-            #- unset GOROOT
-            #- go get
+            - export PATH=$PATH:$GOPATH/bin
             - go build
             - mkdir bin
             - mv main bin
