@@ -1,5 +1,5 @@
 language: go
 go:
-  -1.15.3
+  - 1.15.3
 script:
-  -go build
+  - go build
