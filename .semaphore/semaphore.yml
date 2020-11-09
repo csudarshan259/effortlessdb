@@ -32,7 +32,7 @@ blocks:
 
             # Set version of Go:
             - sem-version go 1.15.3
-            - go get ./...
+            - go get
             # Download dependencies and build the project:
             - go build
 
