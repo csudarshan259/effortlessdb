@@ -1,14 +1,14 @@
-package file_management
+package Fiile_management
 
 import (
-	"effortlessdb/db_op"
+	"effortlessdb/Db_Op"
 	"fmt"
 	"os"
 )
 
 func CreateFile(collectionName string) bool {
 
-	file, err := os.Create(collectionName + db_op.EfdExt)
+	file, err := os.Create(collectionName + Db_Op.EfdExt)
 	if err != nil {
 		fmt.Println("Unable to create collection", collectionName)
 		return false

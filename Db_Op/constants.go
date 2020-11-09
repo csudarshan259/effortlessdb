@@ -1,4 +1,4 @@
-package db_op
+package Db_Op
 
 const (
 	EfdExt                = ".efd"
@@ -7,8 +7,8 @@ const (
 	InvalidCollectionName = "ICN"
 	FileDoesNotExist      = "FNE"
 	Create                = "create"
-	Read                  = "read"
-	Update                = "update"
-	Delete                = "delete"
+	Read                  = "Read"
+	Update                = "Update"
+	Delete                = "Delete"
 	Id                    = "_id"
 )

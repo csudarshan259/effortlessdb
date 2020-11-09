@@ -1,8 +1,8 @@
-package file_management
+package Fiile_management
 
 import (
-	"effortlessdb/db_op"
-	"effortlessdb/object_id_generation"
+	"effortlessdb/Db_Op"
+	"effortlessdb/Object_Id_Generation"
 	"encoding/json"
 	"log"
 	"os"
@@ -23,7 +23,7 @@ func AddToFile(collectionName string, key string, value string) (bool, string) {
 	defer file.Close()
 
 	KeyValuePair := KVPair{
-		db_op.Id: object_id_generation.GenerateObjectId(),
+		Db_Op.Id: Object_Id_Generation.GenerateObjectId(),
 		key:      value,
 	}
 
@@ -42,5 +42,5 @@ func AddToFile(collectionName string, key string, value string) (bool, string) {
 		return false, "Unable to write to file"
 	}
 
-	return true, db_op.Success
+	return true, Db_Op.Success
 }
