@@ -1,8 +1,8 @@
-package File_management
+package file_management
 
 import (
-	"effortlessdb/Db_Op"
 	"effortlessdb/Object_Id_Generation"
+	"effortlessdb/db_op"
 	"encoding/json"
 	"log"
 	"os"
@@ -23,13 +23,14 @@ func AddToFile(collectionName string, key string, value string) (bool, string) {
 	defer file.Close()
 
 	KeyValuePair := KVPair{
-		Db_Op.Id: Object_Id_Generation.GenerateObjectId(),
+		db_op.Id: Object_Id_Generation.GenerateObjectId(),
 		key:      value,
 	}
 
 	//KVBytes := *(*[unsafe.Sizeof(kevValuePair)]byte)(unsafe.Pointer(&kevValuePair))
 
 	b, err := json.Marshal(KeyValuePair)
+	b = append(b, db_op.NewLine...)
 	if err != nil {
 		//		fmt.Println("Unable to marshal")
 		return false, "Unable to marshal key value pair"
@@ -42,5 +43,5 @@ func AddToFile(collectionName string, key string, value string) (bool, string) {
 		return false, "Unable to write to file"
 	}
 
-	return true, Db_Op.Success
+	return true, db_op.Success
 }

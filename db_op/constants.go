@@ -1,4 +1,4 @@
-package Db_Op
+package db_op
 
 const (
 	EfdExt                = ".efd"
@@ -7,8 +7,11 @@ const (
 	InvalidCollectionName = "ICN"
 	FileDoesNotExist      = "FNE"
 	Create                = "create"
-	Read                  = "Read"
-	Update                = "Update"
-	Delete                = "Delete"
+	Read                  = "read"
+	Update                = "update"
+	Delete                = "delete"
 	Id                    = "_id"
+	NewLine               = "\n"
 )
+
+type KVPair map[string]string
