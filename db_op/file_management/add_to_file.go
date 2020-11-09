@@ -1,16 +1,14 @@
-package fileManagement
+package file_management
 
 import (
 	"effortlessdb/db_op"
+	"effortlessdb/object_id_generation"
 	"encoding/json"
 	"log"
 	"os"
 )
 
-type KVPair struct {
-	Key   string
-	Value string
-}
+type KVPair map[string]string
 
 func AddToFile(collectionName string, key string, value string) (bool, string) {
 	_, fileName := CreateFileIFNotExists(collectionName, string(key[0]))
@@ -24,7 +22,11 @@ func AddToFile(collectionName string, key string, value string) (bool, string) {
 	}
 	defer file.Close()
 
-	KeyValuePair := KVPair{key, value}
+	KeyValuePair := KVPair{
+		"_id": object_id_generation.GenerateObjectId(),
+		key:   value,
+	}
+
 	//KVBytes := *(*[unsafe.Sizeof(kevValuePair)]byte)(unsafe.Pointer(&kevValuePair))
 
 	b, err := json.Marshal(KeyValuePair)

@@ -1,4 +1,4 @@
-package fileManagement
+package file_management
 
 import (
 	"effortlessdb/db_op"

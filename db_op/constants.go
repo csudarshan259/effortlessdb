@@ -10,5 +10,4 @@ const (
 	Read                  = "read"
 	Update                = "update"
 	Delete                = "delete"
-	AbsolutePath          = "C:\\Users\\Sudarshan\\go\\src\\db_op"
 )
