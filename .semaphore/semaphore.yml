@@ -10,14 +10,12 @@ blocks:
       jobs:
         - name: go get & build
           commands:
-            - checkout $HOME/go/src/effortlessdb
+            - checkout
             #- sem-version go 1.15.3
-            - sudo apt-get install golang -y
             - export PATH=$PATH:$GOPATH/bin
             - go build
             - mkdir bin
             - mv main bin
-            - cache store $(checksum main) bin
   - name: Check code style
     task:
       jobs:
