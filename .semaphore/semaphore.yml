@@ -13,8 +13,11 @@ blocks:
             - checkout
             - sem-version go 1.15.3
             - go version
-            - go get
-            #- go build
+            - export PATH=$HOME/bin:/usr/local/bin:$PATH
+            - export GOPATH=$HOME/go
+            - export PATH=$PATH:$GOROOT/bin
+            #- go get
+            - go build
             - mkdir bin
             - mv main bin
   - name: Check code style
