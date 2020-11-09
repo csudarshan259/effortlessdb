@@ -23,8 +23,8 @@ func AddToFile(collectionName string, key string, value string) (bool, string) {
 	defer file.Close()
 
 	KeyValuePair := KVPair{
-		"_id": object_id_generation.GenerateObjectId(),
-		key:   value,
+		db_op.Id: object_id_generation.GenerateObjectId(),
+		key:      value,
 	}
 
 	//KVBytes := *(*[unsafe.Sizeof(kevValuePair)]byte)(unsafe.Pointer(&kevValuePair))

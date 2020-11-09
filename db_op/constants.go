@@ -10,4 +10,5 @@ const (
 	Read                  = "read"
 	Update                = "update"
 	Delete                = "delete"
+	Id                    = "_id"
 )
