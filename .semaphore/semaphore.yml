@@ -31,10 +31,10 @@ blocks:
             - checkout
 
             # Set version of Go:
-            - sem-version go 1.15
+            - sem-version go 1.15.3
 
             # Download dependencies and build the project:
-            - go build main.go
+            - go build
 
             # Store the binary in cache to reuse in further blocks.
             # More about caching: https://docs.semaphoreci.com/article/54-toolbox-reference#cache
