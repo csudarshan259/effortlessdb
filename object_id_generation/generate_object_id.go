@@ -1,4 +1,4 @@
-package Object_Id_Generation
+package object_id_generation
 
 import (
 	"crypto/rand"

@@ -1,8 +1,8 @@
 package file_management
 
 import (
-	"effortlessdb/Object_Id_Generation"
 	"effortlessdb/db_op"
+	"effortlessdb/object_id_generation"
 	"encoding/json"
 	"log"
 	"os"
@@ -23,7 +23,7 @@ func AddToFile(collectionName string, key string, value string) (bool, string) {
 	defer file.Close()
 
 	KeyValuePair := KVPair{
-		db_op.Id: Object_Id_Generation.GenerateObjectId(),
+		db_op.Id: object_id_generation.GenerateObjectId(),
 		key:      value,
 	}
 
