@@ -16,7 +16,7 @@ blocks:
             - ls -a
             - cd /home
             - ls -a
-            - cd /usr
+            - cd /usr/local
             - ls -a
             - export GOROOT= /semaphore/local/go
             - export PATH=$PATH:$GOROOT/bin
