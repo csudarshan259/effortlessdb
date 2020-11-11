@@ -12,6 +12,9 @@ blocks:
           commands:
             - checkout
             - sem-version go 1.15.3
+            - echo $HOME
+            - echo $USER
+            - ls -al
             - export GOROOT=/opt/go
             - export PATH=$PATH:$GOROOT/bin
             - go version
