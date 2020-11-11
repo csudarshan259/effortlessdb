@@ -12,10 +12,13 @@ blocks:
           commands:
             - checkout
             - sem-version go 1.15.3
-            - echo $HOME
-            - echo $USER
-            - apt list | grep go
-            - export GOROOT=/opt/go
+            - cd /home/semaphore
+            - ls -a
+            - cd /home
+            - ls -a
+            - cd /usr
+            - ls -a
+            - export GOROOT= /semaphore/local/go
             - export PATH=$PATH:$GOROOT/bin
             - go version
 
