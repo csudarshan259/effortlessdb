@@ -14,7 +14,7 @@ blocks:
             - sem-version go 1.15.3
             - echo $HOME
             - echo $USER
-            - ls -al
+            - apt list | grep go
             - export GOROOT=/opt/go
             - export PATH=$PATH:$GOROOT/bin
             - go version
