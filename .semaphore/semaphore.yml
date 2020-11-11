@@ -12,6 +12,7 @@ blocks:
           commands:
             - checkout
             - sem-version go 1.15.3
+            - go env GOPATH
             - export GOROOT=/usr/local/golang/1.15.3/go
             - export PATH=$PATH:$GOROOT/bin
             - go version
