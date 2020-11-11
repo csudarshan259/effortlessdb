@@ -15,7 +15,7 @@ blocks:
             - export GOROOT=/usr/local/golang/1.15.3/go
             - export PATH=$PATH:$GOROOT/bin
             - go version
-
+            - pwd
             #- go get
             - go build main.go
   - name: Check code style
