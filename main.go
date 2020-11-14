@@ -3,6 +3,7 @@ package main
 import (
 	"effortlessdb/db_op"
 	create2 "effortlessdb/db_op/create"
+	delete2 "effortlessdb/db_op/delete"
 	"effortlessdb/db_op/read"
 	"effortlessdb/db_op/update"
 	"fmt"
@@ -34,7 +35,7 @@ func main() {
 				key := strings.Split(arguments[3], ":")[1]
 
 				isSuccess, result := read.ReadKeyValue(arguments[2], key)
-				//				isSuccess, result := read.ReadKeyValue(arguments[2], arguments[3])
+				// isSuccess, result := read.ReadKeyValue(arguments[2], arguments[3])
 
 				fmt.Println(result, isSuccess)
 			}
@@ -61,6 +62,20 @@ func main() {
 		fmt.Println(result, isSuccess)
 
 	} else if identifier == db_op.Delete {
+
+		if len(os.Args) == 4 {
+
+			isSuccess, result := delete2.DeleteByKey(arguments[2], arguments[3]) //collection_name key
+
+			//fmt.Println("result",result)
+			fmt.Println(result, isSuccess)
+
+		} else if len(os.Args) == 5 {
+
+			isSuccess, result := delete2.DeleteByKeyId(arguments[2], arguments[3], arguments[4]) //collection_name,_id,key
+			fmt.Println(result, isSuccess)
+
+		}
 
 	} else {
 		os.Exit(0)

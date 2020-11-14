@@ -11,6 +11,7 @@ func ReadKeyValue(collectionName string, key string) (bool, []string) {
 
 	data, err := ioutil.ReadFile(collectionName + (string([]rune(key)[0])) + db_op.EfdExt)
 
+	//fmt.Println("data",data)
 	if err != nil {
 		//fmt.Println(err)
 		return false, nil
