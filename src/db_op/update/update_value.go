@@ -1,8 +1,8 @@
 package update
 
 import (
-	"effortlessdb/db_op"
-	"effortlessdb/db_op/read"
+	"db_op"
+	"db_op/read"
 	"encoding/json"
 	"fmt"
 	"io/ioutil"

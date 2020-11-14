@@ -1,7 +1,7 @@
 package file_management
 
 import (
-	"effortlessdb/db_op"
+	"db_op"
 	"fmt"
 	"os"
 )

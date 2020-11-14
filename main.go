@@ -1,11 +1,11 @@
 package main
 
 import (
-	"effortlessdb/db_op"
-	create2 "effortlessdb/db_op/create"
-	delete2 "effortlessdb/db_op/delete"
-	"effortlessdb/db_op/read"
-	"effortlessdb/db_op/update"
+	"db_op"
+	create2 "db_op/create"
+	delete2 "db_op/delete"
+	"db_op/read"
+	"db_op/update"
 	"fmt"
 	"os"
 	"strings"

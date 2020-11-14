@@ -1,8 +1,8 @@
 package create
 
 import (
-	"effortlessdb/db_op"
-	fileManagement2 "effortlessdb/db_op/file_management"
+	"db_op"
+	fileManagement2 "db_op/file_management"
 )
 
 func createCollection(collectionName string) (bool, string) {

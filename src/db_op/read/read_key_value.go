@@ -1,7 +1,7 @@
 package read
 
 import (
-	"effortlessdb/db_op"
+	"db_op"
 	"fmt"
 	"io/ioutil"
 	"strings"

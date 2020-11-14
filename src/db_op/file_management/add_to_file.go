@@ -1,10 +1,10 @@
 package file_management
 
 import (
-	"effortlessdb/db_op"
-	"effortlessdb/object_id_generation"
+	"db_op"
 	"encoding/json"
 	"log"
+	"object_id_generation"
 	"os"
 )
 
