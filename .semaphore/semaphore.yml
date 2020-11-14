@@ -11,12 +11,12 @@ blocks:
         - name: go get & build
           commands:
             - checkout
-            - export GOROOT=/usr/local/go
+            - pwd
+            - export GOROOT=/usr/semaphore/go
             - export GOPATH=$HOME/go
             - 'export PATH=$GOPATH/bin:$GOROOT/bin:$PATH'
             - go env
             - go version
-            - pwd
             - go build main.go
   - name: Check code style
     task:
