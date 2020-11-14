@@ -1,7 +1,0 @@
-language: go
-go:
-  - 1.15.3
-script:
-  - pwd
-  - export GOPATH=$HOME/csudarshan259/effortlessdb
-  - go build main.go
