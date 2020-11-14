@@ -12,7 +12,7 @@ blocks:
           commands:
             - checkout
             - pwd
-            - export GOROOT=/usr/semaphore/go
+            - export GOROOT=/home/semaphore/go
             - export GOPATH=$HOME/go
             - 'export PATH=$GOPATH/bin:$GOROOT/bin:$PATH'
             - go env
