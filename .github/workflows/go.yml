@@ -32,6 +32,8 @@ jobs:
       run: pwd
     - name: Export
       run: export GOPATH=/home/runner/work/effortlessdb/effortlessdb
+    - name: home
+      run: echo $HOME
     - name: Build
       run: go build -v .
 
