@@ -12,9 +12,8 @@ blocks:
           commands:
             - checkout
             - pwd
-            - export GOROOT=/home/semaphore/go
-            - export GOPATH=$HOME/go
-            - 'export PATH=$GOPATH/bin:$GOROOT/bin:$PATH'
+            - export GOROOT=$HOME/go
+            - 'export PATH=$PATH:$GOROOT/bin'
             - go env
             - go version
             - go build main.go
