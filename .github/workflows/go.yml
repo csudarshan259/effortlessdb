@@ -31,7 +31,7 @@ jobs:
     - name: PWD
       run: pwd
     - name: Export
-      run: export GOPATH=/home/runner/work/effortlessdb/effortlessdb
+      run: export GOPATH=$HOME/work/effortlessdb/effortlessdb
     - name: home
       run: echo $HOME
     - name: Build
