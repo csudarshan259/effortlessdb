@@ -13,7 +13,7 @@ blocks:
             - checkout
             - pwd
             - go env
-            - export GOPATH=/home/semaphore
+            - export GOPATH=/home/semaphore/effortlessdb
             - go env
             - go version
             - go build main.go
