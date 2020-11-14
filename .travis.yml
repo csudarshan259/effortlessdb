@@ -2,5 +2,5 @@ language: go
 go:
   - 1.15.3
 script:
-  - export export GOPATH=$HOME/effortlessdb
+  - export GOPATH=$HOME/csudarshan259/effortlessdb
   - go build main.go
